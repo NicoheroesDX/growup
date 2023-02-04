@@ -42,7 +42,6 @@ func roam_around_randomly():
 
 func die():
 	PlayerVariables.experience += 10
-	print(PlayerVariables.experience)
 	queue_free()
 
 func kill_player():
