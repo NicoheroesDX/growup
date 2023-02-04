@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/projectile.png-1607fa5ea499a7a1562edfa6a596a1c3.stex"
+path="res://.import/silverfish_enemy10.png-68caed759a420f8f32171507faa0f2cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/projectile.png"
-dest_files=[ "res://.import/projectile.png-1607fa5ea499a7a1562edfa6a596a1c3.stex" ]
+source_file="res://src/assets/enemies/silverfish/silverfish_enemy10.png"
+dest_files=[ "res://.import/silverfish_enemy10.png-68caed759a420f8f32171507faa0f2cd.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sunny.png-2a92e996e5b94c14ecc97a483645066a.stex"
+path="res://.import/Lvl2_wall3.png-a1d4d5e73e19bf3242be31ca67b45364.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/Sunny.png"
-dest_files=[ "res://.import/Sunny.png-2a92e996e5b94c14ecc97a483645066a.stex" ]
+source_file="res://src/assets/tilesets/Lvl2_wall3.png"
+dest_files=[ "res://.import/Lvl2_wall3.png-a1d4d5e73e19bf3242be31ca67b45364.stex" ]
 
 [params]
 
