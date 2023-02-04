@@ -19,7 +19,8 @@ func _process(delta):
 
 func player_shoot(projectileVelocity):
 	var projectile = projectilePath.instance()
-	projectile.position = player.position
+	var spawnPosition = Vector2(player.position.x, player.position.y - 10)
+	projectile.position = spawnPosition
 	projectile.velocity = projectileVelocity
 	add_child(projectile)
 	

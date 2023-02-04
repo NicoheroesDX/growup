@@ -1,7 +1,7 @@
 extends Actor
 
 var moveCounter = 0
-onready var player: KinematicBody2D = get_tree().get_current_scene().get_node("Player")
+onready var player = get_parent().get_node("Player")
 
 func _process(delta):
 	var playerPosition = player.get_position()
@@ -40,10 +40,16 @@ func roam_around_randomly():
 	
 	velocity = move_and_slide(velocity)
 
+func die():
+	PlayerVariables.experience += 10
+	print(PlayerVariables.experience)
+	queue_free()
 
-#func _on_PlayerDetector_body_entered(body):
-#	print("ENTERED!")
-#	if (body.get_groups().has("player_attack")):
-#		queue_free()
-#	if (body.get_groups().has("player")):
-#		print("YOOO YOU DEAD!!!")
+func kill_player():
+	print("YOOO YOU DEAD!!!")
+
+func _on_PlayerDetector_body_entered(body):
+	if (body.get_groups().has("player_attack")):
+		die()
+	if (body.get_groups().has("player")):
+		kill_player()
