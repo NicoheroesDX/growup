@@ -1,12 +1,20 @@
 extends Actor
 
+class_name Enemy
+
 var moveCounter = 0
 onready var player = get_parent().get_node("Player")
+
+var health = 0
+
+func _ready():
+	var rng = RandomNumberGenerator.new()
+	health = rng.randf_range(1, 20)
 
 func _process(delta):
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())
-	if playerDistance < 50:
+	if playerDistance < 100:
 		attack_player(playerPosition)
 	else:
 		roam_around_randomly()
@@ -44,8 +52,12 @@ func die():
 	PlayerVariables.experience += 10
 	queue_free()
 
+func hurt(damage):
+	health -= damage
+	if (health <= 0):
+		die()
+
 func kill_player():
-	print("YOOO YOU DEAD!!!")
 	Global.changeScene("res://src/transitions/GameOver.tscn")
 
 func _on_PlayerDetector_body_entered(body):

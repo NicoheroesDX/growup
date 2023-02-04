@@ -14,14 +14,38 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
 }, {
+"base": "Area2D",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://Collectable.gd"
+}, {
+"base": "Collectable",
+"class": "Droppy",
+"language": "GDScript",
+"path": "res://src/entities/Droppy.gd"
+}, {
+"base": "Actor",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/actors/Enemy.gd"
+}, {
 "base": "Node2D",
 "class": "GameOverScreen",
 "language": "GDScript",
 "path": "res://src/transitions/GameOver.gd"
+}, {
+"base": "Collectable",
+"class": "Sunny",
+"language": "GDScript",
+"path": "res://src/entities/Sunny.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"GameOverScreen": ""
+"Collectable": "",
+"Droppy": "",
+"Enemy": "",
+"GameOverScreen": "",
+"Sunny": ""
 }
 
 [application]

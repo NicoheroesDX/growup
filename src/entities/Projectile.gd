@@ -9,17 +9,21 @@ func _process(delta):
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
-func kill_enemy(body):
-	body.queue_free()
+func hurt_enemy(body):
+	
+	var enemy := body as Enemy
+	
+	enemy.hurt(1)
+
+	print(body)
 	PlayerVariables.experience += 10
-	print(PlayerVariables.experience)
 
 func destroy():
 	queue_free()
 
 func _on_Area2D_body_entered(body):
 	if body.get_groups().has("enemy"):
-		kill_enemy(body)
+		hurt_enemy(body)
 		destroy()
 	if body.get_groups().has("level"):
 		destroy()

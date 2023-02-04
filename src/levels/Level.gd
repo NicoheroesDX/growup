@@ -26,3 +26,7 @@ func player_shoot(projectileVelocity):
 	projectile.position = spawnPosition
 	projectile.velocity = projectileVelocity
 	add_child(projectile)
+
+func _on_Porter_body_entered(body):
+	if body.get_groups().has("player"):
+		Global.changeScene("res://src/levels/Level0.tscn")

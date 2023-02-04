@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sunny.png-7b57db597834c7a49511b4202e338052.stex"
+path="res://.import/Pixilart Sprite Sheet (1).png-ee83487b6e4c06c7b602e37de8ed8662.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/items/Sunny.png"
-dest_files=[ "res://.import/Sunny.png-7b57db597834c7a49511b4202e338052.stex" ]
+source_file="res://src/assets/TODO/Pixilart Sprite Sheet (1).png"
+dest_files=[ "res://.import/Pixilart Sprite Sheet (1).png-ee83487b6e4c06c7b602e37de8ed8662.stex" ]
 
 [params]
 

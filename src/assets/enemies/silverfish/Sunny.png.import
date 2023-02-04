@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dropy.png-b922c511a7c70e7e3ed9e78b3527e2c0.stex"
+path="res://.import/Sunny.png-f159265f09a62ec18a483db35245ef41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/items/Dropy.png"
-dest_files=[ "res://.import/Dropy.png-b922c511a7c70e7e3ed9e78b3527e2c0.stex" ]
+source_file="res://src/assets/enemies/silverfish/Sunny.png"
+dest_files=[ "res://.import/Sunny.png-f159265f09a62ec18a483db35245ef41.stex" ]
 
 [params]
 
