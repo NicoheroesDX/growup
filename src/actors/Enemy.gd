@@ -41,6 +41,9 @@ func roam_around_randomly():
 	velocity = move_and_slide(velocity)
 
 
-func _on_PlayerDetector_body_entered(body):
-	if (body.get_groups().has("player")):
-		print("YOOO YOU DEAD!!!")
+#func _on_PlayerDetector_body_entered(body):
+#	print("ENTERED!")
+#	if (body.get_groups().has("player_attack")):
+#		queue_free()
+#	if (body.get_groups().has("player")):
+#		print("YOOO YOU DEAD!!!")
