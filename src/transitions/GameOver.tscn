@@ -29,19 +29,6 @@ region_rect = Rect2( 0, 0, 3000, 3000 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -236.0
-margin_top = -57.5
-margin_right = 236.0
-margin_bottom = 57.5
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "You died!"
-
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -64,5 +51,41 @@ margin_right = 40.0
 margin_bottom = 10.0
 text = "Next Level"
 
+[node name="DashBTN" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 48.0
+margin_right = 171.0
+margin_bottom = 68.0
+text = "Learn Dash"
+
+[node name="LeafBlastBTN" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 88.0
+margin_right = 201.0
+margin_bottom = 108.0
+text = "Learn Leaf Blast"
+
+[node name="RootSlashBTN" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 128.0
+margin_right = 208.0
+margin_bottom = 148.0
+text = "Learn Root Slash"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -236.0
+margin_top = -57.5
+margin_right = 236.0
+margin_bottom = 57.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "You died!"
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="DashBTN" to="." method="_on_DashBTN_pressed"]
+[connection signal="pressed" from="LeafBlastBTN" to="." method="_on_LeafBlastBTN_pressed"]
