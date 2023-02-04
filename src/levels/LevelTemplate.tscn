@@ -85,7 +85,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 3/z_index = 0
 
 [node name="LevelTemplate" type="Node2D"]
-scale = Vector2( 4, 4 )
 script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="." groups=["level"]]
@@ -106,4 +105,5 @@ position = Vector2( 159.75, 37.25 )
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.25, 0.25 )
 script = ExtResource( 5 )

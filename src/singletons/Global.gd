@@ -1,16 +1,12 @@
 extends Node
 
+onready var mainScene = get_tree().root.get_node("root").get_node("MainDisplay")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func changeScene(pathToScene):
+	var removable = mainScene.get_child(0)
+	mainScene.remove_child(removable)
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var scene_to_instantiate = load(pathToScene)
+	var instantiated_scene = scene_to_instantiate.instance()
+	
+	mainScene.add_child(instantiated_scene)

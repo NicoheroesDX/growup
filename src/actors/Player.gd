@@ -7,10 +7,10 @@ var isDashing = false
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
-var dashSpeed = 1000
+var dashSpeed = 250
 
 func _ready():
-	speed = 200
+	speed = 50
 
 func control_player():
 	

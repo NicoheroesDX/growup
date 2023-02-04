@@ -14,7 +14,7 @@ func _process(delta):
 func attack_player(playerPos):
 	var rng = RandomNumberGenerator.new()
 	var enemyPos = self.get_position()
-	var speedRange = rng.randf()*5
+	var speedRange = rng.randf()*2
 	velocity = playerPos-enemyPos
 	velocity = move_and_slide(velocity*speedRange)
 
@@ -22,7 +22,7 @@ func roam_around_randomly():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	
-	var speed = rng.randf_range(50, 200)
+	var speed = rng.randf_range(10, 80)
 	var randomMoveCounter = rng.randf_range(5, 80)
 	var randomMoveLimit = rng.randf_range(20, 100)
 	
@@ -47,6 +47,7 @@ func die():
 
 func kill_player():
 	print("YOOO YOU DEAD!!!")
+	Global.changeScene("res://src/transitions/GameOver.tscn")
 
 func _on_PlayerDetector_body_entered(body):
 	if (body.get_groups().has("player_attack")):

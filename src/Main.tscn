@@ -10,6 +10,6 @@
 
 [node name="PlayerVariables" parent="." instance=ExtResource( 3 )]
 
-[node name="Main" parent="." instance=ExtResource( 3 )]
+[node name="MainDisplay" parent="." instance=ExtResource( 3 )]
 
-[node name="LevelTemplate" parent="Main" instance=ExtResource( 2 )]
+[node name="LevelTemplate" parent="MainDisplay" instance=ExtResource( 2 )]
