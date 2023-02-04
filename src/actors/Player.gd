@@ -4,6 +4,8 @@ const projectilePath = preload('res://src/entities/Projectile.tscn')
 
 var isDashing = false
 
+const MOVE = PlayerVariables.MOVE
+
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
@@ -13,6 +15,9 @@ func _ready():
 	speed = 50
 
 func control_player():
+	
+	if !PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE):
+		isDashing = false
 	
 	if !isDashing:
 		velocity = Vector2()
@@ -25,7 +30,7 @@ func control_player():
 		if Input.is_action_pressed("growup_down"):
 			velocity.y += 1
 		
-		if dashTimer == 0 && Input.is_action_just_pressed("growup_dash"):
+		if PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE) && dashTimer == 0 && Input.is_action_just_pressed("growup_dash"):
 			velocity = velocity.normalized() * dashSpeed
 			dashTimer += 1
 			isDashing = true
