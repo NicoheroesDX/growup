@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thought.png-2f1ef0563054a3942ae464555918e954.stex"
+path="res://.import/thought2.png-07f695bdf74746724307d18094516ba6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/player/00 Intro/thought.png"
-dest_files=[ "res://.import/thought.png-2f1ef0563054a3942ae464555918e954.stex" ]
+source_file="res://src/assets/player/00 Intro/thought2.png"
+dest_files=[ "res://.import/thought2.png-07f695bdf74746724307d18094516ba6.stex" ]
 
 [params]
 
