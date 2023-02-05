@@ -30,9 +30,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -144.0
+margin_left = -40.0
 margin_top = 256.0
-margin_right = -64.0
+margin_right = 40.0
 margin_bottom = 276.0
 text = "Try again"
 
@@ -151,6 +151,26 @@ text = "Ultra Speed"
 margin_top = 72.0
 margin_right = 128.0
 margin_bottom = 86.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = -32.0
+margin_top = -240.0
+margin_right = 36.0
+margin_bottom = -226.0
+text = "YOU DIED!"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -384.0
+margin_top = -128.0
+margin_right = -316.0
+margin_bottom = -114.0
+text = "Skill Tree:"
+
+[node name="XPLabel" type="Label" parent="."]
+margin_left = -384.0
+margin_top = 240.0
+margin_right = -192.0
+margin_bottom = 254.0
 
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="AbilityDash" to="." method="_on_AbilityDash_pressed"]

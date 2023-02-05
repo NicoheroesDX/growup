@@ -5,15 +5,17 @@ class_name GameOverScreen
 const MOVE = PlayerVariables.MOVE
 
 const priceAbilityDash = 0
-const priceAbilityLeaf1 = 100
-const priceAbilityLeaf2 = 200
-const priceAbilityRoot = 300
+const priceAbilityLeaf1 = 20
+const priceAbilityLeaf2 = 150
+const priceAbilityRoot = 1000
 const priceAbilityHeart1 = 100
 const priceAbilityHeart2 = 200
 const priceAbilityHeart3 = 300
-const priceAbilitySpeed1 = 100
-const priceAbilitySpeed2 = 200
-const priceAbilitySpeed3 = 300
+const priceAbilitySpeed1 = 250
+const priceAbilitySpeed2 = 500
+const priceAbilitySpeed3 = 750
+
+onready var xpLabel = get_node("XPLabel")
 
 onready var buttonAbilityDash = get_node("AbilityDash")
 onready var buttonAbilityLeaf1 = get_node("AbilityLeaf1")
@@ -50,6 +52,29 @@ func refresh_screen():
 	labelSpeed1.text = "Price: " + str(priceAbilitySpeed1)
 	labelSpeed2.text = "Price: " + str(priceAbilitySpeed2)
 	labelSpeed3.text = "Price: " + str(priceAbilitySpeed3)
+	
+	xpLabel.text = "You have " + str(PlayerVariables.experience) + " XP!"
+	
+	if PlayerVariables.experience < priceAbilityDash:
+		buttonAbilityDash.disabled = true;
+	if PlayerVariables.experience < priceAbilityLeaf1:
+		buttonAbilityLeaf1.disabled = true;
+	if PlayerVariables.experience < priceAbilityLeaf2:
+		buttonAbilityLeaf2.disabled = true;
+	if PlayerVariables.experience < priceAbilityRoot:
+		buttonAbilityRoot.disabled = true;
+	if PlayerVariables.experience < priceAbilityHeart1:
+		buttonAbilityHeart1.disabled = true;
+	if PlayerVariables.experience < priceAbilityHeart2:
+		buttonAbilityHeart2.disabled = true;
+	if PlayerVariables.experience < priceAbilityHeart3:
+		buttonAbilityHeart3.disabled = true;
+	if PlayerVariables.experience < priceAbilitySpeed1:
+		buttonAbilitySpeed1.disabled = true;
+	if PlayerVariables.experience < priceAbilitySpeed2:
+		buttonAbilitySpeed2.disabled = true;
+	if PlayerVariables.experience < priceAbilitySpeed3:
+		buttonAbilitySpeed3.disabled = true;
 	
 	if PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE):
 		labelDash.text = "Already learned"
@@ -95,58 +120,68 @@ func _on_AbilityDash_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE):
 		PlayerVariables.learnMove(MOVE.DASH_MOVE)
 		buttonAbilityDash.disabled = true;
+		PlayerVariables.experience -= priceAbilityDash
 	refresh_screen()
 
 func _on_AbilityLeaf1_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.LEAF_BLAST):
 		PlayerVariables.learnMove(MOVE.LEAF_BLAST)
 		buttonAbilityLeaf1.disabled = true;
+		PlayerVariables.experience -= priceAbilityLeaf1
 	refresh_screen()
 
 func _on_AbilityLeaf2_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.DOUBLE_LEAF_BLAST):
 		PlayerVariables.learnMove(MOVE.DOUBLE_LEAF_BLAST)
 		buttonAbilityLeaf2.disabled = true;
+		PlayerVariables.experience -= priceAbilityLeaf2
 	refresh_screen()
 
 func _on_AbilityRoot_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.ROOT_SLASH):
 		PlayerVariables.learnMove(MOVE.ROOT_SLASH)
 		buttonAbilityRoot.disabled = true;
+		PlayerVariables.experience -= priceAbilityRoot
 	refresh_screen()
 
 func _on_AbilityHeart1_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.TWO_LIFE):
 		PlayerVariables.learnMove(MOVE.TWO_LIFE)
 		buttonAbilityHeart1.disabled = true;
+		PlayerVariables.experience -= priceAbilityHeart1
 	refresh_screen()
 
 func _on_AbilityHeart2_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.THREE_LIFE):
 		PlayerVariables.learnMove(MOVE.THREE_LIFE)
 		buttonAbilityHeart2.disabled = true;
+		PlayerVariables.experience -= priceAbilityHeart2
 	refresh_screen()
 
 func _on_AbilityHeart3_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.FIVE_LIFE):
 		PlayerVariables.learnMove(MOVE.FIVE_LIFE)
 		buttonAbilityHeart3.disabled = true;
+		PlayerVariables.experience -= priceAbilityHeart3
 	refresh_screen()
 
 func _on_AbilitySpeed1_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.SPEED_TWO):
 		PlayerVariables.learnMove(MOVE.SPEED_TWO)
 		buttonAbilitySpeed1.disabled = true;
+		PlayerVariables.experience -= priceAbilitySpeed1
 	refresh_screen()
 
 func _on_AbilitySpeed2_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.SPEED_FOUR):
 		PlayerVariables.learnMove(MOVE.SPEED_FOUR)
 		buttonAbilitySpeed2.disabled = true;
+		PlayerVariables.experience -= priceAbilitySpeed2
 	refresh_screen()
 
 func _on_AbilitySpeed3_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.SPEED_SIX):
 		PlayerVariables.learnMove(MOVE.SPEED_SIX)
 		buttonAbilitySpeed3.disabled = true;
+		PlayerVariables.experience -= priceAbilitySpeed3
 	refresh_screen()
