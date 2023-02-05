@@ -1,6 +1,6 @@
 extends Node
 
-var experience = 1000000
+var experience = 0
 var health = 0
 
 var size = 1

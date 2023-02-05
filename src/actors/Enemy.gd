@@ -59,6 +59,12 @@ func attack_player(playerPos):
 	var enemyPos = self.get_position()
 	var speedRange = rng.randf()*2
 	velocity = playerPos-enemyPos
+	
+	if velocity.x > 1:
+		sprite.scale.x = -1
+	else:
+		sprite.scale.x = 1
+	
 	velocity = move_and_slide(velocity*speedRange)
 
 func roam_around_randomly():
@@ -80,6 +86,11 @@ func roam_around_randomly():
 		velocity = Vector2(randi() % 3 - 1, randi() % 3 - 1) * speed
 	elif moveCounter > randomMoveCounter:
 		velocity = Vector2(0, 0)
+	
+	if velocity.x > 1:
+		sprite.scale.x = -1
+	else:
+		sprite.scale.x = 1
 	
 	velocity = move_and_slide(velocity)
 

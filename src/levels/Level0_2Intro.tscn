@@ -730,15 +730,16 @@ anims/RESET = SubResource( 5 )
 anims/SeedyAnimation = SubResource( 3 )
 
 [node name="PlayerCamera" type="Camera2D" parent="AnimationPlayer"]
-position = Vector2( -214.891, 100 )
+position = Vector2( -60, -184 )
 offset = Vector2( -100, -100 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
 [node name="Seedy" type="AnimatedSprite" parent="AnimationPlayer"]
-position = Vector2( -215.993, 100 )
+position = Vector2( -65, -180 )
 frames = SubResource( 4 )
 animation = "gucken"
+frame = 1
 playing = true
 
 [node name="Thought2" type="AnimatedSprite" parent="AnimationPlayer"]
