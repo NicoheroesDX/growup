@@ -2,9 +2,14 @@ extends Actor
 
 const projectilePath = preload('res://src/entities/Projectile.tscn')
 
+onready var sprite = get_node("Sprite")
+
 var isDashing = false
 
 const MOVE = PlayerVariables.MOVE
+
+var isInvincible = false
+var invincibleTimer = 0
 
 onready var shootSound = get_node("ShootSound")
 onready var dashSound = get_node("DashSound")
@@ -19,9 +24,14 @@ var dashTimer = 0
 var dashLength = 10
 var dashSpeed = 200 + PlayerVariables.playerSpeed
 
+func start_invincibility():
+	isInvincible = true
+	invincibleTimer = 1
+
 func _ready():
 	rootSlash.hide()
 	rootSlash.toggle_collision(false)
+	PlayerVariables.calculate_health()
 	PlayerVariables.calculate_speed()
 	speed = PlayerVariables.playerSpeed
 
@@ -69,6 +79,17 @@ func control_player():
 		velocity = velocity.normalized() * dashSpeed
 
 func _physics_process(delta):
+	
+	if isInvincible:
+		invincibleTimer += 1
+		if invincibleTimer > 50:
+			isInvincible = false
+			invincibleTimer = 0
+	
+	if isInvincible:
+		sprite.modulate = Color(1, 0, 0)
+	else:
+		sprite.modulate = Color(1, 1, 1)
 	
 	if rootSlashTimer > 0:
 		rootSlash.rotate(0.4)

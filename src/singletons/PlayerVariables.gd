@@ -1,7 +1,7 @@
 extends Node
 
 var experience = 0
-var health = 1
+var health = 0
 var size = 0
 
 var playerSpeed = 0
@@ -24,6 +24,16 @@ var learnedMoves = [MOVE.DASH_MOVE]
 
 func learnMove(move):
 	learnedMoves.push_back(move)
+
+func calculate_health():
+	if learnedMoves.has(MOVE.FIVE_LIFE):
+		health = 5
+	elif learnedMoves.has(MOVE.THREE_LIFE):
+		health = 3
+	elif learnedMoves.has(MOVE.TWO_LIFE):
+		health = 2
+	else:
+		health = 1
 
 func calculate_shoot_cooldown():
 	if learnedMoves.has(MOVE.DOUBLE_LEAF_BLAST):

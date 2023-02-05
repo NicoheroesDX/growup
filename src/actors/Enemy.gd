@@ -7,6 +7,7 @@ onready var player = get_parent().get_node("Player")
 
 onready var hitSound = get_node("HitSound")
 onready var sprite = get_node("AnimatedSprite")
+onready var area = get_node("PlayerDetector")
 
 var isHurt = false
 
@@ -29,6 +30,14 @@ func _process(delta):
 			blinkingTimer = 0
 
 func _physics_process(delta):
+	
+	var overlapping_bodies = area.get_overlapping_bodies()
+	
+	for body in overlapping_bodies:
+		if body.get_groups().has("player"):
+			kill_player()
+			break
+	
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())
 	throwTimer += 1
@@ -91,7 +100,12 @@ func throw():
 	isThrown = true
 
 func kill_player():
-	Global.changeScene("res://src/transitions/GameOver.tscn")
+	if player.isInvincible:
+		return
+	player.start_invincibility()
+	PlayerVariables.health -= 1
+	if PlayerVariables.health <= 0:
+		Global.changeScene("res://src/transitions/GameOver.tscn")
 
 func _on_PlayerDetector_body_entered(body):
 	if (body.get_groups().has("player_attack")):
