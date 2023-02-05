@@ -1,0 +1,154 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/assets/tilesets/0Tileset.png" type="Texture" id=2]
+[ext_resource path="res://src/levels/Level.gd" type="Script" id=4]
+[ext_resource path="res://src/levels/PlayerCamera.gd" type="Script" id=5]
+
+[sub_resource type="TileSet" id=1]
+0/name = "0Tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 32, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "0Tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 48, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "0Tileset.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 48, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "0Tileset.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 32, 48, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "0Tileset.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "0Tileset.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 16, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "0Tileset.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 32, 0, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "0Tileset.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 16, 16, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "0Tileset.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 16, 32, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+
+[node name="Level0Tutorial" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="." groups=["level"]]
+position = Vector2( 0, 1 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_mask = 33
+format = 1
+tile_data = PoolIntArray( -196612, 4, 0, -196611, 5, 0, -196610, 5, 0, -196609, 5, 0, -262144, 5, 0, -262143, 5, 0, -262142, 6, 0, -131076, 8, 0, -131075, 8, 0, -131074, 8, 0, -131073, 8, 0, -196608, 8, 0, -196607, 8, 0, -196606, 8, 0, -65540, 8, 0, -65539, 8, 0, -65538, 8, 0, -65537, 8, 0, -131072, 8, 0, -131071, 8, 0, -131070, 8, 0, -4, 8, 0, -3, 8, 0, -2, 8, 0, -1, 0, 0, -65536, 8, 0, -65535, 8, 0, -65534, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 1, 0, 65535, 8, 0, 0, 3, 0, 1, 8, 0, 2, 8, 0, 131068, 8, 0, 131069, 8, 0, 131070, 8, 0, 131071, 2, 0, 65536, 8, 0, 65537, 8, 0, 65538, 8, 0, 196604, 8, 0, 196605, 8, 0, 196606, 8, 0, 196607, 8, 0, 131072, 8, 0, 131073, 8, 0, 131074, 8, 0, 262140, 8, 0, 262141, 8, 0, 262142, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 8, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7, 9 )
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2( -6, 4 )
+current = true
+zoom = Vector2( 0.25, 0.25 )
+script = ExtResource( 5 )
