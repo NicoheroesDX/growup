@@ -1,5 +1,7 @@
 extends Node
 
+var lastLevel = "res://src/levels/Level1.tscn"
+
 onready var mainScene = get_tree().root.get_node("root").get_node("MainDisplay")
 
 func changeScene(pathToScene):

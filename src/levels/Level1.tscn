@@ -1375,7 +1375,7 @@ zoom = Vector2( 0.25, 0.25 )
 script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 137, 33 )
+position = Vector2( 2171, -499 )
 
 [node name="Silverfish" parent="." instance=ExtResource( 3 )]
 position = Vector2( 189, 191 )

@@ -48,4 +48,5 @@ func player_shoot(projectileVelocity):
 
 func _on_Porter_body_entered(body):
 	if body.get_groups().has("player"):
-		Global.changeScene("res://src/levels/Level0.tscn")
+		Global.lastLevel = "res://src/levels/Level2.tscn"
+		Global.changeScene("res://src/levels/Level2.tscn")
