@@ -15,9 +15,6 @@ func hurt_enemy(body):
 	
 	enemy.hurt(1)
 
-	print(body)
-	PlayerVariables.experience += 10
-
 func destroy():
 	queue_free()
 

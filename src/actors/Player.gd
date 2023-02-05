@@ -9,15 +9,40 @@ const MOVE = PlayerVariables.MOVE
 onready var shootSound = get_node("ShootSound")
 onready var dashSound = get_node("DashSound")
 
+onready var rootSlash = get_node("RootSlash")
+
+var isRootSlashing = false
+var rootSlashTimer = 0
+
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
 var dashSpeed = 250
 
 func _ready():
+	rootSlash.hide()
+	rootSlash.toggle_collision(false)
 	speed = 50
 
+func use_root_slash():
+	if isRootSlashing:
+		return
+	#rootSlash.rotation = 0
+	rootSlashTimer = 1
+	isRootSlashing = true
+	rootSlash.show()
+	rootSlash.execute()
+
+func stop_root_slash():
+	isRootSlashing = false
+	rootSlashTimer = 0
+	rootSlash.hide()
+	rootSlash.toggle_collision(false)
+
 func control_player():
+	
+	if PlayerVariables.learnedMoves.has(MOVE.ROOT_SLASH) && Input.is_action_just_pressed("growup_slash") && !isRootSlashing:
+		use_root_slash()
 	
 	if !PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE):
 		isDashing = false
@@ -44,6 +69,13 @@ func control_player():
 		velocity = velocity.normalized() * dashSpeed
 
 func _physics_process(delta):
+	
+	if rootSlashTimer > 0:
+		rootSlash.rotate(0.4)
+		rootSlashTimer += 1
+		if rootSlashTimer > 25:
+			stop_root_slash()
+	
 	if (dashTimer > 0):
 		dashTimer+=1
 		if (dashTimer > dashLength):

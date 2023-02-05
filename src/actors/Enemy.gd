@@ -10,6 +10,8 @@ onready var sprite = get_node("AnimatedSprite")
 
 var blinkingTimer = 0
 
+var isThrown = false
+
 var health = 0
 
 func _ready():
@@ -26,10 +28,14 @@ func _process(delta):
 func _physics_process(delta):
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())
-	if playerDistance < 100:
-		attack_player(playerPosition)
+	if isThrown:
+		velocity = Vector2(100, 0)
+		velocity = move_and_slide(velocity)
 	else:
-		roam_around_randomly()
+		if playerDistance < 100:
+			attack_player(playerPosition)
+		else:
+			roam_around_randomly()
 
 func attack_player(playerPos):
 	var rng = RandomNumberGenerator.new()
@@ -71,6 +77,9 @@ func hurt(damage):
 	health -= damage
 	if (health <= 0):
 		die()
+
+func throw():
+	velocity = Vector2(100, 0)
 
 func kill_player():
 	Global.changeScene("res://src/transitions/GameOver.tscn")
