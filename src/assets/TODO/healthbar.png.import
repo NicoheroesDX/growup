@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset2.png-b96e19f60012728468618677e3b632b7.stex"
+path="res://.import/healthbar.png-c0477e7e18b0a1e5eb9583642c975ffb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/tilesets/Tileset2.png"
-dest_files=[ "res://.import/Tileset2.png-b96e19f60012728468618677e3b632b7.stex" ]
+source_file="res://src/assets/TODO/healthbar.png"
+dest_files=[ "res://.import/healthbar.png-c0477e7e18b0a1e5eb9583642c975ffb.stex" ]
 
 [params]
 
