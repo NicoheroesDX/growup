@@ -172,6 +172,13 @@ margin_top = 240.0
 margin_right = -192.0
 margin_bottom = 254.0
 
+[node name="Button" type="Button" parent="."]
+margin_left = 384.0
+margin_top = 256.0
+margin_right = 461.0
+margin_bottom = 276.0
+text = "Exit Game"
+
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="AbilityDash" to="." method="_on_AbilityDash_pressed"]
 [connection signal="pressed" from="AbilityLeaf1" to="." method="_on_AbilityLeaf1_pressed"]
@@ -183,3 +190,4 @@ margin_bottom = 254.0
 [connection signal="pressed" from="AbilitySpeed1" to="." method="_on_AbilitySpeed1_pressed"]
 [connection signal="pressed" from="AbilitySpeed2" to="." method="_on_AbilitySpeed2_pressed"]
 [connection signal="pressed" from="AbilitySpeed3" to="." method="_on_AbilitySpeed3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

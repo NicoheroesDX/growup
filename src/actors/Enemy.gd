@@ -33,10 +33,11 @@ func _physics_process(delta):
 	
 	var overlapping_bodies = area.get_overlapping_bodies()
 	
-	for body in overlapping_bodies:
-		if body.get_groups().has("player"):
-			kill_player()
-			break
+	if overlapping_bodies.size() > 0:
+		for body in overlapping_bodies:
+			if body.get_groups().has("player"):
+				kill_player()
+				break
 	
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())

@@ -128,6 +128,7 @@ func _on_AbilityLeaf1_pressed():
 	refresh_screen()
 
 func _on_AbilityLeaf2_pressed():
+	_on_AbilityLeaf1_pressed()
 	if !PlayerVariables.learnedMoves.has(MOVE.DOUBLE_LEAF_BLAST):
 		PlayerVariables.learnMove(MOVE.DOUBLE_LEAF_BLAST)
 		buttonAbilityLeaf2.disabled = true;
@@ -149,6 +150,7 @@ func _on_AbilityHeart1_pressed():
 	refresh_screen()
 
 func _on_AbilityHeart2_pressed():
+	_on_AbilityHeart1_pressed()
 	if !PlayerVariables.learnedMoves.has(MOVE.THREE_LIFE):
 		PlayerVariables.learnMove(MOVE.THREE_LIFE)
 		buttonAbilityHeart2.disabled = true;
@@ -156,6 +158,8 @@ func _on_AbilityHeart2_pressed():
 	refresh_screen()
 
 func _on_AbilityHeart3_pressed():
+	_on_AbilityHeart1_pressed()
+	_on_AbilityHeart2_pressed()
 	if !PlayerVariables.learnedMoves.has(MOVE.FIVE_LIFE):
 		PlayerVariables.learnMove(MOVE.FIVE_LIFE)
 		buttonAbilityHeart3.disabled = true;
@@ -170,6 +174,7 @@ func _on_AbilitySpeed1_pressed():
 	refresh_screen()
 
 func _on_AbilitySpeed2_pressed():
+	_on_AbilitySpeed1_pressed()
 	if !PlayerVariables.learnedMoves.has(MOVE.SPEED_FOUR):
 		PlayerVariables.learnMove(MOVE.SPEED_FOUR)
 		buttonAbilitySpeed2.disabled = true;
@@ -177,8 +182,13 @@ func _on_AbilitySpeed2_pressed():
 	refresh_screen()
 
 func _on_AbilitySpeed3_pressed():
+	_on_AbilitySpeed1_pressed()
+	_on_AbilitySpeed2_pressed()
 	if !PlayerVariables.learnedMoves.has(MOVE.SPEED_SIX):
 		PlayerVariables.learnMove(MOVE.SPEED_SIX)
 		buttonAbilitySpeed3.disabled = true;
 		PlayerVariables.experience -= priceAbilitySpeed3
 	refresh_screen()
+
+func _on_Button_pressed():
+	get_tree().quit()

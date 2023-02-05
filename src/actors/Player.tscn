@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://src/actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://src/assets/player/0/player0_0.png" type="Texture" id=2]
@@ -6,6 +6,36 @@
 [ext_resource path="res://src/assets/sounds/shoot.wav" type="AudioStream" id=4]
 [ext_resource path="res://src/assets/sounds/dash.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/entities/RootSlash.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.3.png" type="Texture" id=7]
+[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.4.png" type="Texture" id=8]
+[ext_resource path="res://src/assets/player/06. Planty1/Planty1.3.png" type="Texture" id=9]
+[ext_resource path="res://src/assets/player/06. Planty1/Planty1.4.png" type="Texture" id=10]
+[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.2.png" type="Texture" id=11]
+[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.1.png" type="Texture" id=12]
+[ext_resource path="res://src/assets/player/07. Planty2/Planty2.2.png" type="Texture" id=13]
+[ext_resource path="res://src/assets/player/04. Seed3/Seed3.4.png" type="Texture" id=14]
+[ext_resource path="res://src/assets/player/07. Planty2/Planty2.3.png" type="Texture" id=15]
+[ext_resource path="res://src/assets/player/07. Planty2/Planty2.1.png" type="Texture" id=16]
+[ext_resource path="res://src/assets/player/06. Planty1/Planty1.1.png" type="Texture" id=17]
+[ext_resource path="res://src/assets/player/07. Planty2/Planty2.4.png" type="Texture" id=18]
+[ext_resource path="res://src/assets/player/06. Planty1/Planty1.2.png" type="Texture" id=19]
+[ext_resource path="res://src/assets/player/08. Planty3/Planty3.3.png" type="Texture" id=20]
+[ext_resource path="res://src/assets/player/08. Planty3/Planty3.4.png" type="Texture" id=21]
+[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.2.png" type="Texture" id=22]
+[ext_resource path="res://src/assets/player/08. Planty3/Planty3.2.png" type="Texture" id=23]
+[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.3.png" type="Texture" id=24]
+[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.1.png" type="Texture" id=25]
+[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.4.png" type="Texture" id=26]
+[ext_resource path="res://src/assets/player/08. Planty3/Planty3.1.png" type="Texture" id=27]
+[ext_resource path="res://src/assets/player/02. Seed1/Seed1.1.png" type="Texture" id=28]
+[ext_resource path="res://src/assets/player/02. Seed1/Seed1.2.png" type="Texture" id=29]
+[ext_resource path="res://src/assets/player/03. Seed2/Seed2.1.png" type="Texture" id=30]
+[ext_resource path="res://src/assets/player/04. Seed3/Seed3.1.png" type="Texture" id=31]
+[ext_resource path="res://src/assets/player/04. Seed3/Seed3.3.png" type="Texture" id=32]
+[ext_resource path="res://src/assets/player/04. Seed3/Seed3.2.png" type="Texture" id=33]
+[ext_resource path="res://src/assets/player/03. Seed2/Seed2.2.png" type="Texture" id=34]
+[ext_resource path="res://src/assets/player/03. Seed2/Seed2.4.png" type="Texture" id=35]
+[ext_resource path="res://src/assets/player/03. Seed2/Seed2.3.png" type="Texture" id=36]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
@@ -15,7 +45,47 @@ height = 2.0
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "idle",
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "9",
 "speed": 5.0
 } ]
 
@@ -32,7 +102,8 @@ scale = Vector2( 1.5, 1 )
 position = Vector2( -4.76837e-07, -4.76837e-07 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "1"
+frame = 1
 playing = true
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]

@@ -1,8 +1,9 @@
 extends Node
 
-var experience = 0
+var experience = 1000000
 var health = 0
-var size = 0
+
+var size = 1
 
 var playerSpeed = 0
 var playerShootLimit = 0
@@ -24,6 +25,11 @@ var learnedMoves = [MOVE.DASH_MOVE]
 
 func learnMove(move):
 	learnedMoves.push_back(move)
+
+func calculate_size():
+	size = learnedMoves.size()
+	if size > 9:
+		size = 9
 
 func calculate_health():
 	if learnedMoves.has(MOVE.FIVE_LIFE):

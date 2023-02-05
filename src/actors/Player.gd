@@ -22,18 +22,23 @@ var rootSlashTimer = 0
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
-var dashSpeed = 200 + PlayerVariables.playerSpeed
+var dashSpeed = 200 + (PlayerVariables.playerSpeed * 2)
 
 func start_invincibility():
 	isInvincible = true
 	invincibleTimer = 1
 
 func _ready():
+	PlayerVariables.calculate_size()
+	
 	rootSlash.hide()
 	rootSlash.toggle_collision(false)
 	PlayerVariables.calculate_health()
 	PlayerVariables.calculate_speed()
 	speed = PlayerVariables.playerSpeed
+	
+	sprite.position.y = PlayerVariables.size*(-2.5)
+	sprite.animation = str(PlayerVariables.size)
 
 func use_root_slash():
 	if isRootSlashing:
