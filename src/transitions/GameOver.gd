@@ -4,6 +4,11 @@ class_name GameOverScreen
 
 const MOVE = PlayerVariables.MOVE
 
+onready var deathSound = get_node("DeathSound")
+
+func _ready():
+	deathSound.play()
+
 func _on_Button_pressed():
 	Global.changeScene("res://src/levels/Level0.tscn")
 

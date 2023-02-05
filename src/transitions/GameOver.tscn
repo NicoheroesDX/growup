@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/assets/TODO/COOPBL.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://src/transitions/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://src/assets/sounds/death.wav" type="AudioStream" id=3]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
@@ -84,6 +85,9 @@ margin_bottom = 57.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "You died!"
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]

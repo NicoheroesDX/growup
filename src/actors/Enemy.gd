@@ -5,6 +5,11 @@ class_name Enemy
 var moveCounter = 0
 onready var player = get_parent().get_node("Player")
 
+onready var hitSound = get_node("HitSound")
+onready var sprite = get_node("AnimatedSprite")
+
+var blinkingTimer = 0
+
 var health = 0
 
 func _ready():
@@ -12,6 +17,13 @@ func _ready():
 	health = rng.randf_range(1, 20)
 
 func _process(delta):
+	if blinkingTimer > 0:
+		blinkingTimer += 1
+		if blinkingTimer > 5:
+			sprite.modulate = Color(1, 1, 1)
+			blinkingTimer = 0
+
+func _physics_process(delta):
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())
 	if playerDistance < 100:
@@ -53,6 +65,9 @@ func die():
 	queue_free()
 
 func hurt(damage):
+	sprite.modulate = Color(1, 0, 0)
+	blinkingTimer = 1
+	hitSound.play()
 	health -= damage
 	if (health <= 0):
 		die()

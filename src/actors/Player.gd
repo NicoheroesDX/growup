@@ -6,6 +6,9 @@ var isDashing = false
 
 const MOVE = PlayerVariables.MOVE
 
+onready var shootSound = get_node("ShootSound")
+onready var dashSound = get_node("DashSound")
+
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
@@ -31,6 +34,7 @@ func control_player():
 			velocity.y += 1
 		
 		if PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE) && dashTimer == 0 && Input.is_action_just_pressed("growup_dash"):
+			dashSound.play()
 			velocity = velocity.normalized() * dashSpeed
 			dashTimer += 1
 			isDashing = true
