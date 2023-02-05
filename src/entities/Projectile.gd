@@ -13,7 +13,7 @@ func hurt_enemy(body):
 	
 	var enemy := body as Enemy
 	
-	enemy.hurt(1)
+	enemy.hurt(2)
 
 func destroy():
 	queue_free()

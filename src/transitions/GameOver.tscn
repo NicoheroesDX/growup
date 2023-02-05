@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/assets/TODO/COOPBL.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://src/transitions/GameOver.gd" type="Script" id=2]
 [ext_resource path="res://src/assets/sounds/death.wav" type="AudioStream" id=3]
 
@@ -10,10 +9,6 @@ colors = PoolColorArray( 0, 0, 0, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 100
-font_data = ExtResource( 1 )
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 2 )
@@ -30,66 +25,141 @@ region_rect = Rect2( 0, 0, 3000, 3000 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -22.5
-margin_top = 100.0
-margin_right = 22.5
-margin_bottom = 10.0
-text = "Retry"
-
 [node name="NextLevelButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -40.0
-margin_top = 150.0
-margin_right = 40.0
-margin_bottom = 10.0
-text = "Next Level"
-
-[node name="DashBTN" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 48.0
-margin_right = 171.0
-margin_bottom = 68.0
-text = "Learn Dash"
-
-[node name="LeafBlastBTN" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 88.0
-margin_right = 201.0
-margin_bottom = 108.0
-text = "Learn Leaf Blast"
-
-[node name="RootSlashBTN" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 128.0
-margin_right = 208.0
-margin_bottom = 148.0
-text = "Learn Root Slash"
-
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -236.0
-margin_top = -57.5
-margin_right = 236.0
-margin_bottom = 57.5
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "You died!"
+margin_left = -144.0
+margin_top = 256.0
+margin_right = -64.0
+margin_bottom = 276.0
+text = "Try again"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="AbilityDash" type="Button" parent="."]
+margin_left = -384.0
+margin_right = -256.0
+margin_bottom = 64.0
+text = "Dash Attack"
+
+[node name="LabelDash" type="Label" parent="AbilityDash"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityLeaf1" type="Button" parent="."]
+margin_left = -128.0
+margin_bottom = 64.0
+text = "Leaf Blast"
+
+[node name="LabelLeaf1" type="Label" parent="AbilityLeaf1"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityLeaf2" type="Button" parent="."]
+margin_left = 64.0
+margin_right = 192.0
+margin_bottom = 64.0
+text = "Double Leaf Blast"
+
+[node name="LabelLeaf2" type="Label" parent="AbilityLeaf2"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityRoot" type="Button" parent="."]
+margin_left = 256.0
+margin_right = 384.0
+margin_bottom = 64.0
+text = "Root Strike"
+
+[node name="LabelRoot" type="Label" parent="AbilityRoot"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityHeart1" type="Button" parent="."]
+margin_left = -128.0
+margin_top = -128.0
+margin_bottom = -64.0
+text = "Two Hearts"
+
+[node name="LabelHeart1" type="Label" parent="AbilityHeart1"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityHeart2" type="Button" parent="."]
+margin_left = 64.0
+margin_top = -128.0
+margin_right = 192.0
+margin_bottom = -64.0
+text = "Three Hearts"
+
+[node name="LabelHeart2" type="Label" parent="AbilityHeart2"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilityHeart3" type="Button" parent="."]
+margin_left = 256.0
+margin_top = -128.0
+margin_right = 384.0
+margin_bottom = -64.0
+text = "Five Hearts"
+
+[node name="LabelHeart3" type="Label" parent="AbilityHeart3"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilitySpeed1" type="Button" parent="."]
+margin_left = -128.0
+margin_top = 128.0
+margin_bottom = 192.0
+text = "Super Speed"
+
+[node name="LabelSpeed1" type="Label" parent="AbilitySpeed1"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilitySpeed2" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 192.0
+text = "Hyper Speed"
+
+[node name="LabelSpeed2" type="Label" parent="AbilitySpeed2"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
+[node name="AbilitySpeed3" type="Button" parent="."]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 192.0
+text = "Ultra Speed"
+
+[node name="LabelSpeed3" type="Label" parent="AbilitySpeed3"]
+margin_top = 72.0
+margin_right = 128.0
+margin_bottom = 86.0
+
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
-[connection signal="pressed" from="DashBTN" to="." method="_on_DashBTN_pressed"]
-[connection signal="pressed" from="LeafBlastBTN" to="." method="_on_LeafBlastBTN_pressed"]
+[connection signal="pressed" from="AbilityDash" to="." method="_on_AbilityDash_pressed"]
+[connection signal="pressed" from="AbilityLeaf1" to="." method="_on_AbilityLeaf1_pressed"]
+[connection signal="pressed" from="AbilityLeaf2" to="." method="_on_AbilityLeaf2_pressed"]
+[connection signal="pressed" from="AbilityRoot" to="." method="_on_AbilityRoot_pressed"]
+[connection signal="pressed" from="AbilityHeart1" to="." method="_on_AbilityHeart1_pressed"]
+[connection signal="pressed" from="AbilityHeart2" to="." method="_on_AbilityHeart2_pressed"]
+[connection signal="pressed" from="AbilityHeart3" to="." method="_on_AbilityHeart3_pressed"]
+[connection signal="pressed" from="AbilitySpeed1" to="." method="_on_AbilitySpeed1_pressed"]
+[connection signal="pressed" from="AbilitySpeed2" to="." method="_on_AbilitySpeed2_pressed"]
+[connection signal="pressed" from="AbilitySpeed3" to="." method="_on_AbilitySpeed3_pressed"]

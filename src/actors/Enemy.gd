@@ -8,9 +8,12 @@ onready var player = get_parent().get_node("Player")
 onready var hitSound = get_node("HitSound")
 onready var sprite = get_node("AnimatedSprite")
 
+var isHurt = false
+
 var blinkingTimer = 0
 
 var isThrown = false
+var throwTimer = 0
 
 var health = 0
 
@@ -28,11 +31,15 @@ func _process(delta):
 func _physics_process(delta):
 	var playerPosition = player.get_position()
 	var playerDistance = playerPosition.distance_to(self.get_position())
+	throwTimer += 1
+	if throwTimer > 25:
+		isThrown = false
 	if isThrown:
-		velocity = Vector2(100, 0)
-		velocity = move_and_slide(velocity)
+		var enemyPosition = self.get_position()
+		velocity = playerPosition-enemyPosition
+		velocity = move_and_slide(-velocity*2)
 	else:
-		if playerDistance < 100:
+		if playerDistance < 100 || isHurt:
 			attack_player(playerPosition)
 		else:
 			roam_around_randomly()
@@ -71,6 +78,7 @@ func die():
 	queue_free()
 
 func hurt(damage):
+	isHurt = true
 	sprite.modulate = Color(1, 0, 0)
 	blinkingTimer = 1
 	hitSound.play()
@@ -79,7 +87,8 @@ func hurt(damage):
 		die()
 
 func throw():
-	velocity = Vector2(100, 0)
+	throwTimer = 0
+	isThrown = true
 
 func kill_player():
 	Global.changeScene("res://src/transitions/GameOver.tscn")

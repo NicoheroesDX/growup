@@ -21,23 +21,6 @@ func _ready():
 func toggle_collision(isCollidable):
 	collsion = isCollidable
 
-func _physics_process(delta):
-	if isActive:
-		timer += 1
-		if timer > 16:
-			collider.shape = originalColliderShape
-			collider.position = originalColliderPos
-			isActive = false
-			timer = 0
-		else:
-			if timer > 8:
-				collider.shape.set_extents(collider.shape.get_extents() + Vector2(-1*RANGE,0))
-				collider.position.x -= RANGE
-			else:
-				collider.shape.set_extents(collider.shape.get_extents() + Vector2(RANGE,0))
-				collider.position.x += RANGE 
-				
-
 func execute():
 	toggle_collision(true)
 	sprite.frame = 0

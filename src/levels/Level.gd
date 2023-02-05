@@ -4,9 +4,25 @@ onready var player: KinematicBody2D = get_node("Player")
 
 const MOVE = PlayerVariables.MOVE
 
+var playerShootTimer = 0
+var playerShootTimerLimit = 0
+
 const projectilePath = preload('res://src/entities/Projectile.tscn')
 
-func _process(delta):
+func _ready():
+	PlayerVariables.calculate_shoot_cooldown()
+	playerShootTimerLimit = PlayerVariables.playerShootLimit
+	playerShootTimer = 0
+
+func _physics_process(delta):
+	
+	if playerShootTimer > 0:
+		playerShootTimer += 1
+		if playerShootTimer > playerShootTimerLimit:
+			playerShootTimer = 0
+		else:
+			return
+	
 	if Input.is_action_just_pressed("growup_shoot_up"):
 		player_shoot(Vector2(0,-300))
 	if Input.is_action_just_pressed("growup_shoot_down"):
@@ -20,6 +36,8 @@ func player_shoot(projectileVelocity):
 	
 	if !PlayerVariables.learnedMoves.has(MOVE.LEAF_BLAST):
 		return
+	
+	playerShootTimer = 1
 	
 	var projectile = projectilePath.instance()
 	var spawnPosition = Vector2(player.position.x, player.position.y)

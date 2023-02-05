@@ -17,17 +17,17 @@ var rootSlashTimer = 0
 var dashCoolDown = 25
 var dashTimer = 0
 var dashLength = 10
-var dashSpeed = 250
+var dashSpeed = 200 + PlayerVariables.playerSpeed
 
 func _ready():
 	rootSlash.hide()
 	rootSlash.toggle_collision(false)
-	speed = 50
+	PlayerVariables.calculate_speed()
+	speed = PlayerVariables.playerSpeed
 
 func use_root_slash():
 	if isRootSlashing:
 		return
-	#rootSlash.rotation = 0
 	rootSlashTimer = 1
 	isRootSlashing = true
 	rootSlash.show()
