@@ -50,3 +50,15 @@ func _on_Porter_body_entered(body):
 	if body.get_groups().has("player"):
 		Global.lastLevel = "res://src/levels/Level2.tscn"
 		Global.changeScene("res://src/levels/Level2.tscn")
+
+
+func _on_PorterL2_body_entered(body):
+	if body.get_groups().has("player"):
+		Global.lastLevel = "res://src/levels/Level3.tscn"
+		Global.changeScene("res://src/levels/Level3.tscn")
+
+
+func _on_PorterL3_body_entered(body):
+	if body.get_groups().has("player"):
+		Global.lastLevel = "res://src/transitions/VictoryScreen.tscn"
+		Global.changeScene("res://src/transitions/VictoryScreen.tscn")

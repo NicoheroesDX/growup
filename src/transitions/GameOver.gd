@@ -110,11 +110,8 @@ func refresh_screen():
 func _ready():
 	refresh_screen()
 
-func _on_Button_pressed():
-	Global.changeScene("res://src/levels/Level0.tscn")
-
 func _on_NextLevelButton_pressed():
-	Global.changeScene("res://src/levels/Level1.tscn")
+	Global.changeScene(Global.lastLevel)
 
 func _on_AbilityDash_pressed():
 	if !PlayerVariables.learnedMoves.has(MOVE.DASH_MOVE):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset3.png-dbbf671e90cd691974a49dd28047791f.stex"
+path="res://.import/speedplus.png-77d8044a002220eeccaae76a8f7c6589.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/tilesets/tileset3.png"
-dest_files=[ "res://.import/tileset3.png-dbbf671e90cd691974a49dd28047791f.stex" ]
+source_file="res://src/assets/TODO/skilltree/speedplus.png"
+dest_files=[ "res://.import/speedplus.png-77d8044a002220eeccaae76a8f7c6589.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
