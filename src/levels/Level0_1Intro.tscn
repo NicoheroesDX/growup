@@ -424,7 +424,7 @@ region_rect = Rect2( 0, 0, 3000, 3000 )
 current = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 8, -400 )
+position = Vector2( 8, -256 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
