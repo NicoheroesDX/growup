@@ -1,113 +1,209 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=39 format=3 uid="uid://biqesgb4hvf36"]
 
-[ext_resource path="res://src/actors/Player.gd" type="Script" id=1]
-[ext_resource path="res://src/assets/player/0/player0_0.png" type="Texture" id=2]
-[ext_resource path="res://src/assets/player/0/player0_1.png" type="Texture" id=3]
-[ext_resource path="res://src/assets/sounds/shoot.wav" type="AudioStream" id=4]
-[ext_resource path="res://src/assets/sounds/dash.wav" type="AudioStream" id=5]
-[ext_resource path="res://src/entities/RootSlash.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.3.png" type="Texture" id=7]
-[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.4.png" type="Texture" id=8]
-[ext_resource path="res://src/assets/player/06. Planty1/Planty1.3.png" type="Texture" id=9]
-[ext_resource path="res://src/assets/player/06. Planty1/Planty1.4.png" type="Texture" id=10]
-[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.2.png" type="Texture" id=11]
-[ext_resource path="res://src/assets/player/05. BabyPlant1/BabyPlant1.1.png" type="Texture" id=12]
-[ext_resource path="res://src/assets/player/07. Planty2/Planty2.2.png" type="Texture" id=13]
-[ext_resource path="res://src/assets/player/04. Seed3/Seed3.4.png" type="Texture" id=14]
-[ext_resource path="res://src/assets/player/07. Planty2/Planty2.3.png" type="Texture" id=15]
-[ext_resource path="res://src/assets/player/07. Planty2/Planty2.1.png" type="Texture" id=16]
-[ext_resource path="res://src/assets/player/06. Planty1/Planty1.1.png" type="Texture" id=17]
-[ext_resource path="res://src/assets/player/07. Planty2/Planty2.4.png" type="Texture" id=18]
-[ext_resource path="res://src/assets/player/06. Planty1/Planty1.2.png" type="Texture" id=19]
-[ext_resource path="res://src/assets/player/08. Planty3/Planty3.3.png" type="Texture" id=20]
-[ext_resource path="res://src/assets/player/08. Planty3/Planty3.4.png" type="Texture" id=21]
-[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.2.png" type="Texture" id=22]
-[ext_resource path="res://src/assets/player/08. Planty3/Planty3.2.png" type="Texture" id=23]
-[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.3.png" type="Texture" id=24]
-[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.1.png" type="Texture" id=25]
-[ext_resource path="res://src/assets/player/09. Planty 4/Planty4.4.png" type="Texture" id=26]
-[ext_resource path="res://src/assets/player/08. Planty3/Planty3.1.png" type="Texture" id=27]
-[ext_resource path="res://src/assets/player/02. Seed1/Seed1.1.png" type="Texture" id=28]
-[ext_resource path="res://src/assets/player/02. Seed1/Seed1.2.png" type="Texture" id=29]
-[ext_resource path="res://src/assets/player/03. Seed2/Seed2.1.png" type="Texture" id=30]
-[ext_resource path="res://src/assets/player/04. Seed3/Seed3.1.png" type="Texture" id=31]
-[ext_resource path="res://src/assets/player/04. Seed3/Seed3.3.png" type="Texture" id=32]
-[ext_resource path="res://src/assets/player/04. Seed3/Seed3.2.png" type="Texture" id=33]
-[ext_resource path="res://src/assets/player/03. Seed2/Seed2.2.png" type="Texture" id=34]
-[ext_resource path="res://src/assets/player/03. Seed2/Seed2.4.png" type="Texture" id=35]
-[ext_resource path="res://src/assets/player/03. Seed2/Seed2.3.png" type="Texture" id=36]
+[ext_resource type="Script" path="res://src/actors/Player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cj2h46pmaylqi" path="res://src/assets/player/0/player0_0.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dvrdkxplpso1x" path="res://src/assets/player/0/player0_1.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://1id42xouhibq" path="res://src/assets/sounds/shoot.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://d4h2jl0ijohkx" path="res://src/assets/sounds/dash.wav" id="5"]
+[ext_resource type="PackedScene" uid="uid://co5s678j1mc5i" path="res://src/entities/RootSlash.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://cvlnmaj3jwait" path="res://src/assets/player/05. BabyPlant1/BabyPlant1.3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://lqeo1oh1teg8" path="res://src/assets/player/05. BabyPlant1/BabyPlant1.4.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://v6xaqhmdtaen" path="res://src/assets/player/06. Planty1/Planty1.3.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://8pck2jr041yq" path="res://src/assets/player/06. Planty1/Planty1.4.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cm6uh3f1yjddj" path="res://src/assets/player/05. BabyPlant1/BabyPlant1.2.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://4fhnx3fhcgxb" path="res://src/assets/player/05. BabyPlant1/BabyPlant1.1.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://60md3yd0nh7i" path="res://src/assets/player/07. Planty2/Planty2.2.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://c0b8f8dyi8gxk" path="res://src/assets/player/04. Seed3/Seed3.4.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cp87hfjl2jnws" path="res://src/assets/player/07. Planty2/Planty2.3.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://8jd1k6mkxgfu" path="res://src/assets/player/07. Planty2/Planty2.1.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://trve73awlf2e" path="res://src/assets/player/06. Planty1/Planty1.1.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ckvghg0nrymcg" path="res://src/assets/player/07. Planty2/Planty2.4.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://w5fq2q7cxp4y" path="res://src/assets/player/06. Planty1/Planty1.2.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cqyqowsmxxto4" path="res://src/assets/player/08. Planty3/Planty3.3.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://b6yv1ckaqv2lu" path="res://src/assets/player/08. Planty3/Planty3.4.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://chc4k85w2egap" path="res://src/assets/player/09. Planty 4/Planty4.2.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://bw2epb6ewo3qm" path="res://src/assets/player/08. Planty3/Planty3.2.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://cm41f6bxnopil" path="res://src/assets/player/09. Planty 4/Planty4.3.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://yw1evlc5anle" path="res://src/assets/player/09. Planty 4/Planty4.1.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://7h04imv34c0p" path="res://src/assets/player/09. Planty 4/Planty4.4.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://27vmumfw0ibo" path="res://src/assets/player/08. Planty3/Planty3.1.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://db5bkjmfn0w33" path="res://src/assets/player/02. Seed1/Seed1.1.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://b0ooeouptgx4b" path="res://src/assets/player/02. Seed1/Seed1.2.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cabwgyhtue5wd" path="res://src/assets/player/03. Seed2/Seed2.1.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cw3lq3em71apk" path="res://src/assets/player/04. Seed3/Seed3.1.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://i7wxbetespqu" path="res://src/assets/player/04. Seed3/Seed3.3.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://c78hprh0f01wl" path="res://src/assets/player/04. Seed3/Seed3.2.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://u1bq8up63apw" path="res://src/assets/player/03. Seed2/Seed2.2.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://cl6nlue1ota60" path="res://src/assets/player/03. Seed2/Seed2.4.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://1wtityetlx8x" path="res://src/assets/player/03. Seed2/Seed2.3.png" id="36"]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 8.0
-height = 2.0
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": true,
+"name": &"9",
+"speed": 5.0
+}]
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 30 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "4",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "6",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "7",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "8",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "9",
-"speed": 5.0
-} ]
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 9.0
+height = 20.0
 
-[node name="Player" type="KinematicBody2D" groups=["player"]]
-script = ExtResource( 1 )
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1")
+
+[node name="RootSlash" parent="." instance=ExtResource("6")]
+scale = Vector2(2, 1.334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("2")
+animation = &"1"
+autoplay = "1"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="RootSlash" parent="." instance=ExtResource( 6 )]
-scale = Vector2( 1.5, 1 )
-
-[node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -4.76837e-07, -4.76837e-07 )
-scale = Vector2( 1.25, 1.25 )
-frames = SubResource( 2 )
-animation = "1"
-frame = 1
-playing = true
+shape = SubResource("1")
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource("4")
 
 [node name="DashSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource("5")

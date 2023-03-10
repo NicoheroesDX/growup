@@ -3,11 +3,11 @@ extends Actor
 class_name Enemy
 
 var moveCounter = 0
-onready var player = get_parent().get_node("Player")
+@onready var player = get_parent().get_node("Player")
 
-onready var hitSound = get_node("HitSound")
-onready var sprite = get_node("AnimatedSprite")
-onready var area = get_node("PlayerDetector")
+@onready var hitSound = get_node("HitSound")
+@onready var sprite = get_node("AnimatedSprite2D")
+@onready var area = get_node("PlayerDetector")
 
 var isHurt = false
 
@@ -16,9 +16,10 @@ var blinkingTimer = 0
 var isThrown = false
 var throwTimer = 0
 
-var health = 0
+var health: int = 0
 
 func _ready():
+	print("Called Enemy")
 	var rng = RandomNumberGenerator.new()
 	health = rng.randf_range(1, 20)
 
@@ -29,8 +30,7 @@ func _process(delta):
 			sprite.modulate = Color(1, 1, 1)
 			blinkingTimer = 0
 
-func _physics_process(delta):
-	
+func _physics_process(delta):	
 	var overlapping_bodies = area.get_overlapping_bodies()
 	
 	if overlapping_bodies.size() > 0:
@@ -47,14 +47,16 @@ func _physics_process(delta):
 	if isThrown:
 		var enemyPosition = self.get_position()
 		velocity = playerPosition-enemyPosition
-		velocity = move_and_slide(-velocity*2)
+		set_velocity(-velocity*2)
+		move_and_slide()
+		velocity = velocity
 	else:
 		if playerDistance < 100 || isHurt:
-			attack_player(playerPosition)
+			attack_player(playerPosition, delta)
 		else:
 			roam_around_randomly()
 
-func attack_player(playerPos):
+func attack_player(playerPos, delta):
 	var rng = RandomNumberGenerator.new()
 	var enemyPos = self.get_position()
 	var speedRange = rng.randf()*2
@@ -65,7 +67,8 @@ func attack_player(playerPos):
 	else:
 		sprite.scale.x = 1
 	
-	velocity = move_and_slide(velocity*speedRange)
+	set_velocity(velocity*speedRange)
+	move_and_collide(velocity*delta)
 
 func roam_around_randomly():
 	var rng = RandomNumberGenerator.new()
@@ -92,7 +95,9 @@ func roam_around_randomly():
 	else:
 		sprite.scale.x = 1
 	
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
 
 func die():
 	PlayerVariables.experience += 10
@@ -116,11 +121,10 @@ func kill_player():
 		return
 	player.start_invincibility()
 	PlayerVariables.health -= 1
+	PlayerVariables.updateDisplayedHealth()
 	if PlayerVariables.health <= 0:
 		Global.changeScene("res://src/transitions/GameOver.tscn")
 
 func _on_PlayerDetector_body_entered(body):
-	if (body.get_groups().has("player_attack")):
-		die()
 	if (body.get_groups().has("player")):
 		kill_player()

@@ -1,4 +1,5 @@
 extends Enemy
 
 func _ready():
-	health = 200
+	health = 100
+	

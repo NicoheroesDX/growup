@@ -1,50 +1,59 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://ceeolyk68qbtm"]
 
-[ext_resource path="res://src/assets/enemies/ant/ant_enemy1.png" type="Texture" id=1]
-[ext_resource path="res://src/actors/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://src/assets/enemies/ant/ant_enemy2.png" type="Texture" id=3]
-[ext_resource path="res://src/assets/sounds/hit.wav" type="AudioStream" id=4]
-[ext_resource path="res://src/assets/enemies/ant/ant_enemy3.png" type="Texture" id=5]
+[ext_resource type="Texture2D" uid="uid://b8c3yd052vgi7" path="res://src/assets/enemies/ant/ant_enemy1.png" id="1"]
+[ext_resource type="Script" path="res://src/actors/Enemy.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bg354mn2af7tl" path="res://src/assets/enemies/ant/ant_enemy2.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://pnklainsjfr7" path="res://src/assets/sounds/hit.wav" id="4"]
+[ext_resource type="Texture2D" uid="uid://b17e0pty4cfky" path="res://src/assets/enemies/ant/ant_enemy3.png" id="5"]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
-height = 19.4436
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
 "loop": true,
-"name": "idle",
+"name": &"idle",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="3"]
 radius = 8.57143
-height = 17.1429
+height = 32.381
 
-[node name="Ant" type="KinematicBody2D" groups=["enemy"]]
-collision_layer = 33
+[node name="Ant" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
 collision_mask = 33
-script = ExtResource( 2 )
+script = ExtResource("2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("2")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "idle"
-playing = true
-
-[node name="Position2D" type="Position2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-scale = Vector2( 1, 1.05 )
-shape = SubResource( 3 )
+scale = Vector2(1, 1.05)
+shape = SubResource("3")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource("4")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

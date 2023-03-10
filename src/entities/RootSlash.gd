@@ -2,8 +2,8 @@ extends Area2D
 
 class_name RootSlash
 
-onready var sprite = get_node("Sprite")
-onready var collider = get_node("CollisionShape2D")
+@onready var sprite = get_node("Sprite2D")
+@onready var collider = get_node("CollisionShape2D")
 
 var originalColliderShape
 var originalColliderPos

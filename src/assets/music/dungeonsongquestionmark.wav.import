@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/dungeonsongquestionmark.wav-3a354b3a3f3bc2178b8f230d27cee378.sample"
+type="AudioStreamWAV"
+uid="uid://dkbxf5ifq2uys"
+path="res://.godot/imported/dungeonsongquestionmark.wav-3a354b3a3f3bc2178b8f230d27cee378.sample"
 
 [deps]
 
 source_file="res://src/assets/music/dungeonsongquestionmark.wav"
-dest_files=[ "res://.import/dungeonsongquestionmark.wav-3a354b3a3f3bc2178b8f230d27cee378.sample" ]
+dest_files=["res://.godot/imported/dungeonsongquestionmark.wav-3a354b3a3f3bc2178b8f230d27cee378.sample"]
 
 [params]
 

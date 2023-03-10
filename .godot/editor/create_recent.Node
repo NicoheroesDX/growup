@@ -1,0 +1,10 @@
+CanvasLayer
+CanvasGroup
+Sprite2D
+HBoxContainer
+TextureProgressBar
+TextureRect
+GridContainer
+CollisionShape2D
+RigidBody2D
+AudioStreamPlayer

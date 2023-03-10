@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/dash.wav-af4e683fc58c12608bb7582d1f345fdd.sample"
+type="AudioStreamWAV"
+uid="uid://d4h2jl0ijohkx"
+path="res://.godot/imported/dash.wav-af4e683fc58c12608bb7582d1f345fdd.sample"
 
 [deps]
 
 source_file="res://src/assets/sounds/dash.wav"
-dest_files=[ "res://.import/dash.wav-af4e683fc58c12608bb7582d1f345fdd.sample" ]
+dest_files=["res://.godot/imported/dash.wav-af4e683fc58c12608bb7582d1f345fdd.sample"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var player: KinematicBody2D = get_node("Player")
+@onready var player: CharacterBody2D = get_node("Player")
 
 const MOVE = PlayerVariables.MOVE
 
@@ -39,7 +39,7 @@ func player_shoot(projectileVelocity):
 	
 	playerShootTimer = 1
 	
-	var projectile = projectilePath.instance()
+	var projectile = projectilePath.instantiate()
 	var spawnPosition = Vector2(player.position.x, player.position.y)
 	projectile.position = spawnPosition
 	projectile.velocity = projectileVelocity

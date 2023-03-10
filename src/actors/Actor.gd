@@ -1,5 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 class_name Actor
 
-var velocity = Vector2()
 var speed = 0

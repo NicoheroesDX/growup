@@ -15,31 +15,31 @@ const priceAbilitySpeed1 = 250
 const priceAbilitySpeed2 = 500
 const priceAbilitySpeed3 = 750
 
-onready var xpLabel = get_node("XPLabel")
+@onready var xpLabel = get_node("XPLabel")
 
-onready var buttonAbilityDash = get_node("AbilityDash")
-onready var buttonAbilityLeaf1 = get_node("AbilityLeaf1")
-onready var buttonAbilityLeaf2 = get_node("AbilityLeaf2")
-onready var buttonAbilityRoot = get_node("AbilityRoot")
-onready var buttonAbilityHeart1 = get_node("AbilityHeart1")
-onready var buttonAbilityHeart2 = get_node("AbilityHeart2")
-onready var buttonAbilityHeart3 = get_node("AbilityHeart3")
-onready var buttonAbilitySpeed1 = get_node("AbilitySpeed1")
-onready var buttonAbilitySpeed2 = get_node("AbilitySpeed2")
-onready var buttonAbilitySpeed3 = get_node("AbilitySpeed3")
+@onready var buttonAbilityDash = get_node("AbilityDash")
+@onready var buttonAbilityLeaf1 = get_node("AbilityLeaf1")
+@onready var buttonAbilityLeaf2 = get_node("AbilityLeaf2")
+@onready var buttonAbilityRoot = get_node("AbilityRoot")
+@onready var buttonAbilityHeart1 = get_node("AbilityHeart1")
+@onready var buttonAbilityHeart2 = get_node("AbilityHeart2")
+@onready var buttonAbilityHeart3 = get_node("AbilityHeart3")
+@onready var buttonAbilitySpeed1 = get_node("AbilitySpeed1")
+@onready var buttonAbilitySpeed2 = get_node("AbilitySpeed2")
+@onready var buttonAbilitySpeed3 = get_node("AbilitySpeed3")
 
-onready var labelDash = get_node("AbilityDash/LabelDash")
-onready var labelLeaf1 = get_node("AbilityLeaf1/LabelLeaf1")
-onready var labelLeaf2 = get_node("AbilityLeaf2/LabelLeaf2")
-onready var labelRoot = get_node("AbilityRoot/LabelRoot")
-onready var labelHeart1 = get_node("AbilityHeart1/LabelHeart1")
-onready var labelHeart2 = get_node("AbilityHeart2/LabelHeart2")
-onready var labelHeart3 = get_node("AbilityHeart3/LabelHeart3")
-onready var labelSpeed1 = get_node("AbilitySpeed1/LabelSpeed1")
-onready var labelSpeed2 = get_node("AbilitySpeed2/LabelSpeed2")
-onready var labelSpeed3 = get_node("AbilitySpeed3/LabelSpeed3")
+@onready var labelDash = get_node("AbilityDash/LabelDash")
+@onready var labelLeaf1 = get_node("AbilityLeaf1/LabelLeaf1")
+@onready var labelLeaf2 = get_node("AbilityLeaf2/LabelLeaf2")
+@onready var labelRoot = get_node("AbilityRoot/LabelRoot")
+@onready var labelHeart1 = get_node("AbilityHeart1/LabelHeart1")
+@onready var labelHeart2 = get_node("AbilityHeart2/LabelHeart2")
+@onready var labelHeart3 = get_node("AbilityHeart3/LabelHeart3")
+@onready var labelSpeed1 = get_node("AbilitySpeed1/LabelSpeed1")
+@onready var labelSpeed2 = get_node("AbilitySpeed2/LabelSpeed2")
+@onready var labelSpeed3 = get_node("AbilitySpeed3/LabelSpeed3")
 
-onready var deathSound = get_node("DeathSound")
+@onready var deathSound = get_node("DeathSound")
 
 func refresh_screen():
 	if PlayerVariables.experience < 0:

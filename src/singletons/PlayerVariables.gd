@@ -1,6 +1,7 @@
 extends Node
 
 var experience = 0
+var maxHealth = 0
 var health = 0
 
 var size = 1
@@ -8,11 +9,13 @@ var size = 1
 var playerSpeed = 0
 var playerShootLimit = 0
 
+signal healthChanged
+
 enum MOVE { 
 	DASH_MOVE, 
 	TWO_LIFE,
 	THREE_LIFE,
-	FIVE_LIFE
+	FIVE_LIFE,
 	LEAF_BLAST, 
 	DOUBLE_LEAF_BLAST, 
 	ROOT_SLASH,
@@ -21,7 +24,7 @@ enum MOVE {
 	SPEED_SIX
 	}
 
-var learnedMoves = [MOVE.DASH_MOVE]
+var learnedMoves: Array[MOVE] = [MOVE.DASH_MOVE]
 
 func learnMove(move):
 	learnedMoves.push_back(move)
@@ -40,6 +43,11 @@ func calculate_health():
 		health = 2
 	else:
 		health = 1
+	maxHealth = health
+	updateDisplayedHealth()
+
+func updateDisplayedHealth():
+	healthChanged.emit()
 
 func calculate_shoot_cooldown():
 	if learnedMoves.has(MOVE.DOUBLE_LEAF_BLAST):

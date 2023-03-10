@@ -2,7 +2,7 @@ extends Actor
 
 const projectilePath = preload('res://src/entities/Projectile.tscn')
 
-onready var sprite = get_node("Sprite")
+@onready var sprite = get_node("Sprite2D")
 
 var isDashing = false
 
@@ -11,10 +11,10 @@ const MOVE = PlayerVariables.MOVE
 var isInvincible = false
 var invincibleTimer = 0
 
-onready var shootSound = get_node("ShootSound")
-onready var dashSound = get_node("DashSound")
+@onready var shootSound = get_node("ShootSound")
+@onready var dashSound = get_node("DashSound")
 
-onready var rootSlash = get_node("RootSlash")
+@onready var rootSlash = get_node("RootSlash")
 
 var isRootSlashing = false
 var rootSlashTimer = 0
@@ -110,4 +110,6 @@ func _physics_process(delta):
 			dashTimer = 0
 			isDashing = false
 	control_player()
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
