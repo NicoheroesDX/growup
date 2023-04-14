@@ -1,4 +1,7 @@
-extends Actor
+extends CharacterBody2D
+class_name Player
+
+var speed = 0
 
 const projectilePath = preload('res://src/entities/Projectile.tscn')
 
@@ -109,7 +112,7 @@ func _physics_process(delta):
 		if (dashTimer > dashCoolDown):
 			dashTimer = 0
 			isDashing = false
-	control_player()
+	control_player()	
+
 	set_velocity(velocity)
 	move_and_slide()
-	velocity = velocity

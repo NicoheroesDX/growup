@@ -186,6 +186,8 @@ radius = 9.0
 height = 20.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
+motion_mode = 1
 script = ExtResource("1")
 
 [node name="RootSlash" parent="." instance=ExtResource("6")]

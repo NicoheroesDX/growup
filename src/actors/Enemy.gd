@@ -1,13 +1,22 @@
-extends Actor
-
+extends CharacterBody2D
 class_name Enemy
+
+var speed = 0
 
 var moveCounter = 0
 @onready var player = get_parent().get_node("Player")
 
 @onready var hitSound = get_node("HitSound")
 @onready var sprite = get_node("AnimatedSprite2D")
+@onready var collider = get_node("CollisionShape2D");
+@onready var playerCollider = get_node("PlayerDetector").get_child(0);
 @onready var area = get_node("PlayerDetector")
+
+var originalSpriteScaleX = 0
+var originalColliderRotation = 0
+var originalPlayerColliderRotation = 0
+
+var maxSpeed = 90
 
 var isHurt = false
 
@@ -19,9 +28,12 @@ var throwTimer = 0
 var health: int = 0
 
 func _ready():
-	print("Called Enemy")
 	var rng = RandomNumberGenerator.new()
 	health = rng.randf_range(1, 20)
+	
+	originalSpriteScaleX = sprite.scale.x
+	originalColliderRotation = collider.rotation
+	originalPlayerColliderRotation = playerCollider.rotation
 
 func _process(delta):
 	if blinkingTimer > 0:
@@ -62,13 +74,21 @@ func attack_player(playerPos, delta):
 	var speedRange = rng.randf()*2
 	velocity = playerPos-enemyPos
 	
-	if velocity.x > 1:
-		sprite.scale.x = -1
-	else:
-		sprite.scale.x = 1
+	adjust_sprite_direction()
 	
+	velocity *= speedRange
+	
+	if velocity.x > maxSpeed:
+		velocity.x = maxSpeed
+	if velocity.x < -maxSpeed:
+		velocity.x = -maxSpeed
+	if velocity.y > maxSpeed:
+		velocity.y = maxSpeed
+	if velocity.y < -maxSpeed:
+		velocity.y = -maxSpeed
+
 	set_velocity(velocity*speedRange)
-	move_and_collide(velocity*delta)
+	move_and_slide()
 
 func roam_around_randomly():
 	var rng = RandomNumberGenerator.new()
@@ -90,14 +110,9 @@ func roam_around_randomly():
 	elif moveCounter > randomMoveCounter:
 		velocity = Vector2(0, 0)
 	
-	if velocity.x > 1:
-		sprite.scale.x = -1
-	else:
-		sprite.scale.x = 1
-	
+	adjust_sprite_direction()
 	set_velocity(velocity)
 	move_and_slide()
-	velocity = velocity
 
 func die():
 	PlayerVariables.experience += 10
@@ -124,6 +139,16 @@ func kill_player():
 	PlayerVariables.updateDisplayedHealth()
 	if PlayerVariables.health <= 0:
 		Global.changeScene("res://src/transitions/GameOver.tscn")
+
+func adjust_sprite_direction():
+	if velocity.x < 0:
+		sprite.scale.x = originalSpriteScaleX
+		collider.rotation = originalColliderRotation
+		playerCollider.rotation = originalPlayerColliderRotation
+	else:
+		sprite.scale.x = -originalSpriteScaleX
+		collider.rotation = -originalColliderRotation
+		playerCollider.rotation = -originalPlayerColliderRotation
 
 func _on_PlayerDetector_body_entered(body):
 	if (body.get_groups().has("player")):
