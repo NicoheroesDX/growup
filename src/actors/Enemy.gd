@@ -18,6 +18,8 @@ var originalPlayerColliderRotation = 0
 
 var maxSpeed = 90
 
+var lightness = 40 # Values From 0 (Innanimate) to 40 (Light)
+
 var isHurt = false
 
 var blinkingTimer = 0
@@ -45,9 +47,12 @@ func _process(delta):
 func _physics_process(delta):	
 	var overlapping_bodies = area.get_overlapping_bodies()
 	
+	var isPushed = false
+	
 	if overlapping_bodies.size() > 0:
 		for body in overlapping_bodies:
 			if body.get_groups().has("player"):
+				isPushed = true
 				kill_player()
 				break
 	
@@ -63,7 +68,9 @@ func _physics_process(delta):
 		move_and_slide()
 		velocity = velocity
 	else:
-		if playerDistance < 100 || isHurt:
+		if isPushed:
+			push_behaviour()
+		elif playerDistance < 100 || isHurt:
 			attack_player(playerPosition, delta)
 		else:
 			roam_around_randomly()
@@ -139,6 +146,11 @@ func kill_player():
 	PlayerVariables.updateDisplayedHealth()
 	if PlayerVariables.health <= 0:
 		Global.changeScene("res://src/transitions/GameOver.tscn")
+
+func push_behaviour():
+	var pushDirection = player.velocity
+	set_velocity(pushDirection.normalized()*lightness)
+	move_and_slide()
 
 func adjust_sprite_direction():
 	if velocity.x < 0:

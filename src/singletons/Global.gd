@@ -10,6 +10,9 @@ func _ready():
 	get_tree().root.get_node("root").get_node("MainDisplay") != null):
 		mainScene = get_tree().root.get_node("root").get_node("MainDisplay")
 
+func isDebugModeActive():
+	return mainScene == null
+
 func changeScene(pathToScene):
 	if (mainScene != null):
 		var removable = mainScene.get_child(0)

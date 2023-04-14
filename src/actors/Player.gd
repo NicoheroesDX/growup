@@ -113,6 +113,5 @@ func _physics_process(delta):
 			dashTimer = 0
 			isDashing = false
 	control_player()	
-
 	set_velocity(velocity)
 	move_and_slide()

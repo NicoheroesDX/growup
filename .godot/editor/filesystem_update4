@@ -1,12 +1,13 @@
 res://default_env.tres
-res://src/actors/Enemy.tscn
 res://src/actors/Rat.tscn
 res://src/levels/Level3.tscn
 res://src/levels/Level1.tscn
 res://src/levels/Level2.tscn
 res://src/actors/Player.tscn
-res://src/actors/Enemy.gd
-res://src/actors/Silverfish.tscn
 res://src/actors/Spider.tscn
-res://src/actors/Player.gd
+res://src/actors/Silverfish.tscn
+res://src/actors/Enemy.tscn
+res://src/actors/Enemy.gd
+res://src/singletons/Global.gd
 res://src/singletons/PlayerVariables.gd
+res://src/actors/Player.gd

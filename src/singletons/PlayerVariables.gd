@@ -24,15 +24,11 @@ enum MOVE {
 	SPEED_SIX
 	}
 
-var learnedMoves: Array[MOVE] = [MOVE.DASH_MOVE, MOVE.TWO_LIFE,
-	MOVE.THREE_LIFE,
-	MOVE.FIVE_LIFE,
-	MOVE.LEAF_BLAST, 
-	MOVE.DOUBLE_LEAF_BLAST, 
-	MOVE.ROOT_SLASH,
-	MOVE.SPEED_TWO,
-	MOVE.SPEED_FOUR,
-	MOVE.SPEED_SIX]
+var learnedMoves: Array[MOVE] = [MOVE.DASH_MOVE]
+
+func _ready():
+	if Global.isDebugModeActive():
+		learnedMoves = [MOVE.DASH_MOVE, MOVE.TWO_LIFE, MOVE.THREE_LIFE, MOVE.FIVE_LIFE, MOVE.LEAF_BLAST, MOVE.DOUBLE_LEAF_BLAST, MOVE.ROOT_SLASH]
 
 func learnMove(move):
 	learnedMoves.push_back(move)
